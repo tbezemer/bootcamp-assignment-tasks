@@ -30,6 +30,8 @@ class Task:
                 return None
 
         self.id = self.task_body['id']
+        if 'expires' in self.task_body:
+            self.expires = datetime.strptime(self.task_body['expires'])
         logger.info(f"\t\t*[{self.id}] Fetched task.")
 
     def start(self):
