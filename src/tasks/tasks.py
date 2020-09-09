@@ -34,8 +34,8 @@ class Task:
             self.expires = datetime.fromisoformat(self.task_body['expires'])
         logger.info(f"\t\t*[{self.id}] Fetched task.")
 
-    def start(self):
-        self.expires = datetime.now() + timedelta(seconds=60)
+    def start(self, timeout=60):
+        self.expires = datetime.now() + timedelta(seconds=timeout)
         self._consolidate()
         logger.info(f"\t\t*[{self.id}] Starting task, expiring at {self.expires}.")
 
