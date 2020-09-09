@@ -1,6 +1,6 @@
 from redis import Redis
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 from os import environ
 import logging
 from uuid import uuid4, UUID
@@ -33,7 +33,7 @@ class Task:
         logger.info(f"\t\t*[{self.id}] Fetched task.")
 
     def start(self):
-        self.expires = datetime.now() + datetime.timedelta(seconds=60)
+        self.expires = datetime.now() + timedelta(seconds=60)
         self._consolidate()
         logger.info(f"\t\t*[{self.id}] Starting task, expiring at {self.expires}.")
 
