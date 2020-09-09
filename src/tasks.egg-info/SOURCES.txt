@@ -1,8 +1,0 @@
-setup.py
-src/tasks/__init__.py
-src/tasks/tasks.py
-src/tasks.egg-info/PKG-INFO
-src/tasks.egg-info/SOURCES.txt
-src/tasks.egg-info/dependency_links.txt
-src/tasks.egg-info/requires.txt
-src/tasks.egg-info/top_level.txt
