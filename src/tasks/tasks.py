@@ -15,7 +15,7 @@ class Task:
     error = False
     
     def _consolidate(self):
-        self._redis.hset(RESULTS_KEY, self.id, self.asdict())
+        self._redis.hset(RESULTS_KEY, self.id, json.dumps(self.asdict()))
 
     def __init__(self, redis, task_id=False):
         """Either loads a task from the results table (with task_id set), or waits for a new task to be added to the queue"""
